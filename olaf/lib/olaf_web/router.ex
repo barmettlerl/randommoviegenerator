@@ -10,6 +10,6 @@ defmodule OlafWeb.Router do
   scope "/api", OlafWeb do
     pipe_through(:api)
 
-    get("/movie", MovieController, :index)
+    resources("/movie", MovieController, only: [:index, :show, :create])
   end
 end
